@@ -271,7 +271,7 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background: #ffffff;
+            background: #090b0d;
         }
 
         .carousel-slide {
@@ -282,6 +282,7 @@
             justify-content: center;
             align-items: center;
             box-sizing: border-box;
+            background: #090b0d;
         }
 
         .carousel-slide.active {
@@ -292,16 +293,16 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            margin: 0;
+            display: block;
         }
 
         .carousel-nav-btn {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(11, 18, 32, 0.85);
+            background: rgba(9, 11, 13, 0.85);
             border: 1px solid var(--border-color);
-            color: #ffffff;
+            color: var(--gold-primary);
             width: 38px;
             height: 38px;
             border-radius: 50%;
@@ -310,13 +311,13 @@
             align-items: center;
             justify-content: center;
             font-size: 1.2rem;
-            z-index: 10;
+            z-index: 20;
             transition: all 0.2s ease;
         }
 
         .carousel-nav-btn:hover {
-            background: #0047ff;
-            color: #ffffff;
+            background: var(--gold-primary);
+            color: #090b0d;
         }
 
         .carousel-nav-btn.prev {
@@ -334,21 +335,21 @@
             transform: translateX(-50%);
             display: flex;
             gap: 6px;
-            z-index: 10;
+            z-index: 20;
         }
 
         .dot {
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            background: rgba(0, 71, 255, 0.25);
+            background: rgba(255, 255, 255, 0.35);
             cursor: pointer;
             transition: all 0.2s ease;
         }
 
         .dot.active {
-            background: #0047ff;
-            width: 20px;
+            background: var(--gold-primary);
+            width: 22px;
             border-radius: 4px;
         }
 
@@ -721,7 +722,6 @@
         }
 
         @media (max-width: 900px) {
-
             .hero-grid,
             .ads-grid {
                 grid-template-columns: 1fr;
@@ -740,8 +740,8 @@
     <nav class="navbar">
         <div class="container nav-content">
             <div class="logo-container">
-                <img src="https://raw.githubusercontent.com/lennertdockweiler/Steinhauer/main/logo.png" 
-                     onerror="this.onerror=null; this.src='./logo.png';" 
+                <img src="./logo.png" 
+                     onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/lennertdockweiler/Steinhauer/main/logo.png';" 
                      alt="Steinhauer Media Logo" 
                      class="logo-img">
                 <span class="logo-text serif-font">STEINHAUER MEDIA</span>
@@ -791,7 +791,6 @@
                 <div class="phone-mockup-card">
                     <div class="phone-screen">
                         <span class="tag-pill">🔥 Comedy & Reichweite</span>
-                        <!-- ECHTE VIDEO-DATEI 1 -->
                         <video controls playsinline
                             poster="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80">
                             <source src="COMEDY.mov" type="video/mp4">
@@ -804,12 +803,11 @@
                     </div>
                 </div>
 
-                <!-- Video 2: Educational / Fachwissen (z. B. Bootsbau oder Zahnarzt) -->
+                <!-- Video 2: Educational / Fachwissen -->
                 <div class="phone-mockup-card">
                     <div class="phone-screen">
                         <span class="tag-pill" style="color:#60a5fa; border-color: rgba(96,165,250,0.4);">🎓 Fachwissen
                             & Vertrauen</span>
-                        <!-- ECHTE VIDEO-DATEI 2 -->
                         <video controls playsinline
                             poster="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80">
                             <source src="EDUCATION.mov" type="video/mp4">
@@ -824,27 +822,27 @@
 
                 <!-- Slideshow / Karussell: 5 Fehler beim Zähneputzen -->
                 <div class="phone-mockup-card">
-                    <div class="phone-screen" style="background: #ffffff;">
-                        <span class="tag-pill" style="color: #0047ff; border-color: rgba(0, 71, 255, 0.4); background: rgba(255,255,255,0.95);">
+                    <div class="phone-screen" style="background: #090b0d;">
+                        <span class="tag-pill" style="color: var(--gold-primary); border-color: rgba(226, 192, 141, 0.4); background: rgba(9, 11, 13, 0.95);">
                             📸 Infografik-Karussell
                         </span>
 
                         <!-- Interaktive 5-Bilder Slideshow -->
                         <div class="carousel-container" id="educationalCarousel">
                             <div class="carousel-slide active">
-                                <img src="1.png" alt="Cover: 5 Fehler beim Zähneputzen">
+                                <img src="./1.png" alt="Cover: 5 Fehler beim Zähneputzen" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/lennertdockweiler/Steinhauer/main/1.png';">
                             </div>
                             <div class="carousel-slide">
-                                <img src="2.png" alt="Fehler 1: Zu viel Druck">
+                                <img src="./2.png" alt="Fehler 1: Zu viel Druck" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/lennertdockweiler/Steinhauer/main/2.png';">
                             </div>
                             <div class="carousel-slide">
-                                <img src="3.png" alt="Fehler 2: Zu kurz putzen">
+                                <img src="./3.png" alt="Fehler 2: Zu kurz putzen" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/lennertdockweiler/Steinhauer/main/3.png';">
                             </div>
                             <div class="carousel-slide">
-                                <img src="4.png" alt="Fehler 3: Zwischenräume vergessen">
+                                <img src="./4.png" alt="Fehler 3: Zwischenräume vergessen" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/lennertdockweiler/Steinhauer/main/4.png';">
                             </div>
                             <div class="carousel-slide">
-                                <img src="5.png" alt="Fehler 4 und 5: Bürste zu alt und Säure">
+                                <img src="./5.png" alt="Fehler 4 und 5: Bürste zu alt und Säure" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/lennertdockweiler/Steinhauer/main/5.png';">
                             </div>
 
                             <button class="carousel-nav-btn prev" onclick="changeSlide(-1)">‹</button>
@@ -1028,7 +1026,6 @@
                     <div class="phone-screen">
                         <span class="tag-pill" style="color:#10b981; border-color: rgba(16,185,129,0.4);">💼
                             Team-Kultur</span>
-                        <!-- ECHTE VIDEO-DATEI RECRUITING 1 -->
                         <video controls playsinline
                             poster="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80">
                             <source src="DEIN_RECRUITING_VIDEO_1.mp4" type="video/mp4">
@@ -1046,7 +1043,6 @@
                     <div class="phone-screen">
                         <span class="tag-pill" style="color:#10b981; border-color: rgba(16,185,129,0.4);">⚡ Benefits &
                             Gehalt</span>
-                        <!-- ECHTE VIDEO-DATEI RECRUITING 2 -->
                         <video controls playsinline
                             poster="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80">
                             <source src="DEIN_RECRUITING_VIDEO_2.mp4" type="video/mp4">
@@ -1064,7 +1060,6 @@
                     <div class="phone-screen">
                         <span class="tag-pill" style="color:#10b981; border-color: rgba(16,185,129,0.4);">🎯 Direkte
                             Ansprache</span>
-                        <!-- ECHTE VIDEO-DATEI RECRUITING 3 -->
                         <video controls playsinline
                             poster="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80">
                             <source src="DEIN_RECRUITING_VIDEO_3.mp4" type="video/mp4">
@@ -1108,7 +1103,6 @@
                 </div>
 
                 <div class="iframe-stage">
-                    <!-- Ersetze 'https://example.com' mit deiner Live-Demo URL -->
                     <iframe src="https://example.com" class="preview-frame" id="previewIframe"></iframe>
                 </div>
             </div>
@@ -1121,7 +1115,6 @@
             <p>
                 Kostenlose Beratung vereinbaren
             </p>
-            <!-- Ersetze den Link mit deinem Calendly-Link -->
             <a href="https://calendly.com" target="_blank" class="btn-gold">📅 Jetzt Beratungstermin wählen</a>
         </section>
 
