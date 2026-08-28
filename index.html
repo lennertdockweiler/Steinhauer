@@ -167,6 +167,26 @@
             box-shadow: 0 6px 25px rgba(226, 192, 141, 0.4);
         }
 
+        .btn-outline {
+            display: inline-block;
+            background: transparent;
+            color: #ffffff;
+            border: 1px solid var(--border-color);
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold-primary);
+            color: var(--gold-primary);
+        }
+
         /* Video Containers & Mockups */
         .video-wrapper-16x9 {
             position: relative;
@@ -690,7 +710,7 @@
             box-shadow: 0 0 0 10px #1f242c;
         }
 
-        /* Final Call To Action */
+        /* Final Call To Action - Contact Card */
         .cta-box {
             background: linear-gradient(180deg, #111418 0%, #161a20 100%);
             border: 1px solid var(--gold-primary);
@@ -707,9 +727,17 @@
         }
 
         .cta-box p {
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto 28px;
             font-size: 1.05rem;
+        }
+
+        .contact-action-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
         }
 
         /* Footer */
@@ -722,6 +750,7 @@
         }
 
         @media (max-width: 900px) {
+
             .hero-grid,
             .ads-grid {
                 grid-template-columns: 1fr;
@@ -760,7 +789,7 @@
                     Hier findet ihr eure maßgeschneiderte Strategie: Organische 9:16 Videoformate, gezielte
                     Performance-Werbung und ein blitzschneller Webauftritt – sofort interaktiv zum Testen.
                 </p>
-                <a href="#termin" class="btn-gold">Jetzt kostenlose Beratung vereinbaren →</a>
+                <a href="#kontakt" class="btn-gold">Jetzt unverbindlich Kontakt aufnehmen →</a>
             </div>
 
             <!-- 16:9 Intro Video Player -->
@@ -820,11 +849,11 @@
                     </div>
                 </div>
 
-                <!-- Slideshow / Karussell: 5 Fehler beim Zähneputzen -->
+                <!-- Slideshow / Karussell: Beispiel Infografik & Carousel -->
                 <div class="phone-mockup-card">
                     <div class="phone-screen" style="background: #090b0d;">
                         <span class="tag-pill" style="color: var(--gold-primary); border-color: rgba(226, 192, 141, 0.4); background: rgba(9, 11, 13, 0.95);">
-                            📸 Infografik-Karussell
+                            📸 Wissens-Karussell
                         </span>
 
                         <!-- Interaktive 5-Bilder Slideshow -->
@@ -859,24 +888,17 @@
                         </div>
                     </div>
 
-                    <!-- Beschreibung / Caption unter dem Karussell -->
+                    <!-- Erklärung für den Kunden: Warum Karussell-Beiträge? -->
                     <div class="card-meta">
-                        <h3 class="serif-font">5 Fehler beim Zähneputzen</h3>
-                        <p style="color: #cbd5e1; font-size: 0.85rem; line-height: 1.45; margin-bottom: 6px;">
-                            🪥 <strong>Machst du einen dieser Fehler beim Zähneputzen?</strong><br>
-                            Auch bei der täglichen Zahnpflege können sich kleine Gewohnheiten einschleichen: zu viel Druck, zu wenig Zeit oder vergessene Zahnzwischenräume.
+                        <h3 class="serif-font">Informativ-Beitrag (Karussell)</h3>
+                        <p style="color: var(--gold-primary); font-size: 0.85rem; font-weight: 700; margin-bottom: 4px;">
+                            Beispiel-Thema: 5 Fehler beim Zähneputzen
                         </p>
-                        <p style="color: var(--gold-primary); font-size: 0.8rem; font-weight: bold; margin-bottom: 2px;">Die wichtigsten Punkte:</p>
-                        <ul style="color: #a1a1aa; font-size: 0.78rem; margin: 0 0 8px 16px; padding: 0; line-height: 1.35;">
-                            <li>Mit wenig Druck putzen</li>
-                            <li>Zweimal täglich etwa zwei Minuten einplanen</li>
-                            <li>Zahnzwischenräume zusätzlich reinigen</li>
-                            <li>Zahnbürste regelmäßig wechseln</li>
-                            <li>Nach säurehaltigen Speisen rund 30 Minuten warten</li>
-                        </ul>
-                        <p style="color: #71717a; font-size: 0.72rem; line-height: 1.35;">
-                            <em>Speichere den Beitrag als Erinnerung für deine tägliche Zahnpflege. 💙</em><br>
-                            <span style="color: #60a5fa;">#Zahnpflege #Zähneputzen #GesundeZähne #Mundhygiene #Prophylaxe #Konstanz</span>
+                        <p style="color: #cbd5e1; font-size: 0.82rem; line-height: 1.45; margin-bottom: 8px;">
+                            <strong>Wissen visuell vermitteln:</strong> Zu jedem beliebigen Thema erstellen wir mehrteilige Bild-Karussells. Nutzer wischen durch mehrere Folien, lernen konkrete Tipps und speichern den Beitrag ab.
+                        </p>
+                        <p style="color: #a1a1aa; font-size: 0.78rem; line-height: 1.4;">
+                            💡 <em>Vorteil:</em> Karussells erzielen auf Instagram die höchste Interaktions- und Speicher-Rate, bauen nachweislich Expertenstatus auf und binden die Zielgruppe nachhaltig an dein Unternehmen.
                         </p>
                     </div>
                 </div>
@@ -884,13 +906,12 @@
             </div>
         </section>
 
-        <!-- 3. Performance Marketing: Google Ads Dashboard & Meta Ads -->
+        <!-- 3. Performance Marketing: Google Ads Management & Meta Ads -->
         <section class="section">
             <div class="section-header">
-                <span class="kicker">Performance Marketing & Analytics</span>
-                <h2>2. Live Performance-Analytics (Google & Meta Ads)</h2>
-                <p>Messbares Wachstum: Fahre mit der Maus oder dem Finger über den Graphen, um Impressionen, Klicks und
-                    generierte Anfragen einzusehen.</p>
+                <span class="kicker">Performance Marketing & Google Ads Management</span>
+                <h2>2. Bezahlte Kampagnen: Google Ads & Social Ads</h2>
+                <p>Mit unserem professionellen Google Ads Management erreichen wir kaufbereite Neukunden und qualifizierte Fachkräfte genau dann, wenn sie aktiv nach deinen Leistungen oder offenen Stellen suchen – messbar, planbar und maximal kosteneffektiv.</p>
             </div>
 
             <!-- Interaktives Performance Dashboard -->
@@ -953,8 +974,8 @@
                 <!-- Google Ads Search / Neukunden & Mitarbeiter -->
                 <div class="ad-card">
                     <div class="ad-type-title">
-                        <span>Google Search Ads</span>
-                        <span style="font-size:0.75rem; color:#a1a1aa;">Kaufabsicht & Jobs</span>
+                        <span>Google Search Ads (Google Ads Management)</span>
+                        <span style="font-size:0.75rem; color:#a1a1aa;">High-Intent Search</span>
                     </div>
 
                     <div class="google-box">
@@ -973,8 +994,7 @@
                         </div>
                     </div>
                     <p style="margin-top: 14px; font-size: 0.85rem; color: var(--text-muted);">
-                        Erreicht Personen genau in der Sekunde, in der sie aktiv nach eurer Dienstleistung oder einem
-                        neuen Job suchen.
+                        <strong>Kosteneffektive Reichweite:</strong> Durch kontinuierliche A/B-Tests, Keyword-Optimierung und Conversion-Tracking minimieren wir deinen Klickpreis (CPC) und maximieren qualifizierte Kunden- sowie Bewerberanfragen.
                     </p>
                 </div>
 
@@ -1097,25 +1117,28 @@
                         <button class="view-btn" id="btnMobile" onclick="setMode('mobile')">📱 Smartphone</button>
                     </div>
 
-                    <a href="https://example.com" target="_blank"
+                    <a href="https://lennertdockweiler.github.io/Zahnarzt-abramian/" target="_blank"
                         style="color: var(--gold-primary); font-size: 0.8rem; text-decoration: none; font-weight: 600;">In
                         neuem Tab öffnen ↗</a>
                 </div>
 
                 <div class="iframe-stage">
-                    <iframe src="https://example.com" class="preview-frame" id="previewIframe"></iframe>
+                    <iframe src="https://lennertdockweiler.github.io/Zahnarzt-abramian/" class="preview-frame" id="previewIframe"></iframe>
                 </div>
             </div>
         </section>
 
-        <!-- 6. Abschluss & Call-to-Action -->
-        <section class="cta-box" id="termin">
+        <!-- 6. Abschluss & Direkter Kontakt (E-Mail & Telefon) -->
+        <section class="cta-box" id="kontakt">
             <span class="kicker">Nächster Schritt</span>
-            <h2 class="serif-font">Bereit, eure Sichtbarkeit planbar zu skalieren?</h2>
+            <h2 class="serif-font">Lass uns dein Projekt gemeinsam starten.</h2>
             <p>
-                Kostenlose Beratung vereinbaren
+                Du hast Fragen zur Strategie oder möchtest direkt loslegen? Schreibe uns unkompliziert eine E-Mail oder rufe uns direkt an – wir freuen uns auf den Austausch!
             </p>
-            <a href="https://calendly.com" target="_blank" class="btn-gold">📅 Jetzt Beratungstermin wählen</a>
+            <div class="contact-action-group">
+                <a href="mailto:info@steinhauermedia.de" class="btn-gold">✉️ E-Mail schreiben</a>
+                <a href="tel:+491234567890" class="btn-outline">📞 Jetzt anrufen</a>
+            </div>
         </section>
 
     </main>
