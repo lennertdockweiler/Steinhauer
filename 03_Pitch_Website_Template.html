@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEINHAUER MEDIA | Maßgeschneiderter Pitch & Strategie-Showcase</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-main: #090b0d;
+            --bg-card: #111418;
+            --bg-card-hover: #161a20;
+            --border-color: #1f242c;
+            --gold-primary: #e2c08d;
+            --gold-light: #f3dfb9;
+            --gold-dark: #b89762;
+            --text-main: #ffffff;
+            --text-muted: #a1a1aa;
+            --text-subtle: #71717a;
+            --radius-lg: 16px;
+            --radius-md: 10px;
+            --radius-sm: 6px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-muted);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .serif-font {
+            font-family: 'Playfair Display', Georgia, serif;
+            color: var(--text-main);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Top Navigation Bar */
+        .navbar {
+            background: rgba(9, 11, 13, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 16px 0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--text-main);
+        }
+
+        .client-badge {
+            background: rgba(226, 192, 141, 0.1);
+            border: 1px solid rgba(226, 192, 141, 0.3);
+            color: var(--gold-primary);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 0 40px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .kicker {
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 18px;
+            font-weight: 500;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 28px;
+        }
+
+        .btn-gold {
+            display: inline-block;
+            background: var(--gold-primary);
+            color: #090b0d;
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 20px rgba(226, 192, 141, 0.25);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-gold:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(226, 192, 141, 0.4);
+        }
+
+        /* Video Containers & Mockups */
+        .video-wrapper-16x9 {
+            position: relative;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            aspect-ratio: 16 / 9;
+        }
+
+        .video-wrapper-16x9 video,
+        .video-wrapper-16x9 iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: none;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 70px 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 2.1rem;
+            margin-bottom: 8px;
+        }
+
+        /* 9:16 Smartphone Mockup Grid */
+        .grid-phones {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+        }
+
+        .phone-mockup-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            transition: border-color 0.2s ease;
+        }
+
+        .phone-mockup-card:hover {
+            border-color: rgba(226, 192, 141, 0.4);
+        }
+
+        .phone-screen {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            background: #000;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            margin-bottom: 18px;
+        }
+
+        .phone-screen video,
+        .phone-screen iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tag-pill {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(9, 11, 13, 0.9);
+            color: var(--gold-primary);
+            border: 1px solid rgba(226, 192, 141, 0.4);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            z-index: 10;
+        }
+
+        .card-meta h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .card-meta p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Carousel / Slideshow Section */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #0d1013;
+        }
+
+        .carousel-slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+            padding: 30px 24px;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .carousel-slide.active {
+            display: flex;
+        }
+
+        .carousel-slide img {
+            max-height: 55%;
+            object-fit: contain;
+            border-radius: var(--radius-sm);
+            margin-bottom: 16px;
+        }
+
+        .carousel-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(9, 11, 13, 0.85);
+            border: 1px solid var(--border-color);
+            color: var(--gold-primary);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            z-index: 10;
+            transition: all 0.2s ease;
+        }
+
+        .carousel-nav-btn:hover {
+            background: var(--gold-primary);
+            color: #000;
+        }
+
+        .carousel-nav-btn.prev { left: 10px; }
+        .carousel-nav-btn.next { right: 10px; }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 10;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background: var(--gold-primary);
+            width: 20px;
+            border-radius: 4px;
+        }
+
+        /* Performance Marketing & Ads Mockups */
+        .ads-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+        }
+
+        .ad-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+        }
+
+        .ad-type-title {
+            color: var(--gold-primary);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Google SERP Live UI Mockup */
+        .google-box {
+            background: #090b0d;
+            border: 1px solid #1f242c;
+            border-radius: 8px;
+            padding: 16px;
+            font-family: Arial, sans-serif;
+        }
+
+        .google-sponsored {
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: var(--gold-primary);
+            margin-bottom: 4px;
+        }
+
+        .google-url {
+            font-size: 0.8rem;
+            color: #71717a;
+            margin-bottom: 4px;
+        }
+
+        .google-headline {
+            font-size: 1.05rem;
+            color: #60a5fa;
+            font-weight: 500;
+            text-decoration: underline;
+            margin-bottom: 6px;
+            cursor: pointer;
+        }
+
+        .google-desc {
+            font-size: 0.85rem;
+            color: #d4d4d8;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .google-sitelinks-row {
+            display: flex;
+            gap: 12px;
+            border-top: 1px dashed #27272a;
+            padding-top: 8px;
+            font-size: 0.78rem;
+            color: #60a5fa;
+        }
+
+        /* Meta Ad Live UI Mockup */
+        .meta-box {
+            background: #090b0d;
+            border: 1px solid #1f242c;
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .meta-header-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .meta-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--gold-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #000;
+            font-size: 0.85rem;
+        }
+
+        .meta-brand-name {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .meta-subtext {
+            font-size: 0.75rem;
+            color: #71717a;
+        }
+
+        .meta-caption {
+            font-size: 0.85rem;
+            color: #d4d4d8;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .meta-cta-bar {
+            background: #161a20;
+            border: 1px solid #27272a;
+            border-radius: 6px;
+            padding: 10px 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Website Live Preview Mockup */
+        .web-preview-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+        }
+
+        .browser-top {
+            background: #161a20;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .browser-buttons {
+            display: flex;
+            gap: 6px;
+        }
+
+        .b-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .b-red { background: #ef4444; }
+        .b-yellow { background: #f59e0b; }
+        .b-green { background: #10b981; }
+
+        .view-switchers {
+            display: flex;
+            gap: 8px;
+        }
+
+        .view-btn {
+            background: #090b0d;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .view-btn.active {
+            background: var(--gold-primary);
+            color: #000;
+            font-weight: 700;
+            border-color: var(--gold-primary);
+        }
+
+        .iframe-stage {
+            background: #000;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 520px;
+            transition: all 0.3s ease;
+        }
+
+        .preview-frame {
+            width: 100%;
+            height: 500px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .preview-frame.mobile-mode {
+            width: 375px;
+            height: 600px;
+            border-radius: 24px;
+            box-shadow: 0 0 0 10px #1f242c;
+        }
+
+        /* Final Call To Action */
+        .cta-box {
+            background: linear-gradient(180deg, #111418 0%, #161a20 100%);
+            border: 1px solid var(--gold-primary);
+            border-radius: var(--radius-lg);
+            padding: 50px 30px;
+            text-align: center;
+            margin: 60px 0;
+            box-shadow: 0 15px 40px rgba(226, 192, 141, 0.1);
+        }
+
+        .cta-box h2 {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+        }
+
+        .cta-box p {
+            max-width: 600px;
+            margin: 0 auto 28px;
+            font-size: 1.05rem;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-subtle);
+        }
+
+        @media (max-width: 900px) {
+            .hero-grid, .ads-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Sticky Bar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <div class="logo serif-font">STEINHAUER MEDIA</div>
+            <div class="client-badge">Live Pitch für [Kundenname GmbH]</div>
+        </div>
+    </nav>
+
+    <!-- 1. Hero & Persönliches Video-Intro -->
+    <header class="hero">
+        <div class="container hero-grid">
+            <div>
+                <span class="kicker">Individuelle Wachstums-Roadmap</span>
+                <h1>Digitale Sichtbarkeit, die planbar Neukunden & Mitarbeiter bringt.</h1>
+                <p>
+                    Hier findet ihr eure maßgeschneiderte Strategie: Organische 9:16 Videoformate, gezielte Performance-Werbung und ein blitzschneller Webauftritt – sofort interaktiv zum Testen.
+                </p>
+                <a href="#termin" class="btn-gold">Jetzt Kickoff vereinbaren →</a>
+            </div>
+
+            <!-- 16:9 Intro Video Player -->
+            <div class="video-wrapper-16x9">
+                <!-- ECHTE VIDEO-DATEI: Ersetze das src mit deinem Video-Link -->
+                <video controls poster="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80">
+                    <source src="DEIN_INTRO_VIDEO.mp4" type="video/mp4">
+                    Ihr Browser unterstützt dieses Videoformat leider nicht.
+                </video>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- 2. Organischer Video-Content (9:16) & Bild-Slideshow -->
+        <section class="section">
+            <div class="section-header">
+                <span class="kicker">Organische Social Media Formate</span>
+                <h2>1. Content-Showcase (Instagram & TikTok)</h2>
+                <p>Echte Prototypen für organische Reichweite, Fachkompetenz und edukatives Vertrauen.</p>
+            </div>
+
+            <div class="grid-phones">
+
+                <!-- Video 1: Comedy & Hook Format -->
+                <div class="phone-mockup-card">
+                    <div class="phone-screen">
+                        <span class="tag-pill">🔥 Comedy & Reichweite</span>
+                        <!-- ECHTE VIDEO-DATEI 1 -->
+                        <video controls playsinline poster="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80">
+                            <source src="DEIN_COMEDY_VIDEO.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="card-meta">
+                        <h3 class="serif-font">Humorvolle Alltags-Hooks</h3>
+                        <p>Schnelle Einstiege & humorvolle Sketches, die Nutzer in den ersten 2 Sekunden fesseln und hohe organische Reichweiten im Algorithmus erzielen.</p>
+                    </div>
+                </div>
+
+                <!-- Video 2: Educational / Fachwissen (z. B. Bootsbau oder Zahnarzt) -->
+                <div class="phone-mockup-card">
+                    <div class="phone-screen">
+                        <span class="tag-pill" style="color:#60a5fa; border-color: rgba(96,165,250,0.4);">🎓 Fachwissen & Vertrauen</span>
+                        <!-- ECHTE VIDEO-DATEI 2 -->
+                        <video controls playsinline poster="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80">
+                            <source src="DEIN_EDUCATION_VIDEO.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="card-meta">
+                        <h3 class="serif-font">Experten- & Education-Reels</h3>
+                        <p>Talking-Head Formate mit professionellen Untertiteln: z. B. Bootsbau-Präzision oder Angstpatienten-Aufklärung für spürbar mehr Kundenvertrauen.</p>
+                    </div>
+                </div>
+
+                <!-- Slideshow / Karussell zum Durchscrollen -->
+                <div class="phone-mockup-card">
+                    <div class="phone-screen">
+                        <span class="tag-pill" style="color:#f43f5e; border-color: rgba(244,63,94,0.4);">📸 Wissens-Karussell</span>
+                        
+                        <!-- Interaktive Slideshow -->
+                        <div class="carousel-container" id="educationalCarousel">
+                            <div class="carousel-slide active">
+                                <img src="https://images.unsplash.com/photo-1588702547919-26089e690ecc?auto=format&fit=crop&w=600&q=80" alt="Slide 1">
+                                <h4 style="color:#fff; font-size: 1rem; margin-bottom: 4px;">Schritt 1: Das Kernproblem</h4>
+                                <p style="font-size: 0.8rem; color:#a1a1aa;">Warum herkömmliche Lösungen 80% der Zeit scheitern.</p>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Slide 2">
+                                <h4 style="color:#fff; font-size: 1rem; margin-bottom: 4px;">Schritt 2: Die Fachlösung</h4>
+                                <p style="font-size: 0.8rem; color:#a1a1aa;">Präzise Anleitung & Best Practices auf den Punkt gebracht.</p>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80" alt="Slide 3">
+                                <h4 style="color:#fff; font-size: 1rem; margin-bottom: 4px;">Schritt 3: Das Ergebnis</h4>
+                                <p style="font-size: 0.8rem; color:#a1a1aa;">Messbare Resultate & direkte Handlungsempfehlung.</p>
+                            </div>
+
+                            <button class="carousel-nav-btn prev" onclick="changeSlide(-1)">‹</button>
+                            <button class="carousel-nav-btn next" onclick="changeSlide(1)">›</button>
+
+                            <div class="carousel-dots" id="carouselDots">
+                                <span class="dot active" onclick="goToSlide(0)"></span>
+                                <span class="dot" onclick="goToSlide(1)"></span>
+                                <span class="dot" onclick="goToSlide(2)"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-meta">
+                        <h3 class="serif-font">Infografik & Karussell-Post</h3>
+                        <p>Mehrteilige Wissens-Slideshows mit hoher Speicher- und Teil-Rate. Ideal zur Positionierung als Branchen-Autorität.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 3. Performance Marketing: Google Ads & Meta Ads (Neukunden & Bewerber) -->
+        <section class="section">
+            <div class="section-header">
+                <span class="kicker">Performance Marketing</span>
+                <h2>2. Bezahlte Kampagnen (Google & Meta Ads)</h2>
+                <p>Gezielte Ausspielung für kaufbereite Kunden und aktive Fachkräfte.</p>
+            </div>
+
+            <div class="ads-grid">
+
+                <!-- Google Ads Search / Neukunden & Mitarbeiter -->
+                <div class="ad-card">
+                    <div class="ad-type-title">
+                        <span>Google Search Ads</span>
+                        <span style="font-size:0.75rem; color:#a1a1aa;">Kaufabsicht & Jobs</span>
+                    </div>
+
+                    <div class="google-box">
+                        <div class="google-sponsored">Gesponsert • Google Search</div>
+                        <div class="google-url">https://www.ihre-domain.de/fachbetrieb</div>
+                        <div class="google-headline">[Kundenname] | Meisterbetrieb & Top Arbeitgeber der Region</div>
+                        <div class="google-desc">
+                            Erstklassige Qualität, persönliche Betreuung & transparente Preise. Jetzt anfragen oder in 60 Sekunden ohne Anschreiben bewerben!
+                        </div>
+                        <div class="google-sitelinks-row">
+                            <span>🔹 Leistungen ansehen</span>
+                            <span>🔹 Offene Stellen (m/w/d)</span>
+                            <span>🔹 Kundenstimmen</span>
+                        </div>
+                    </div>
+                    <p style="margin-top: 14px; font-size: 0.85rem; color: var(--text-muted);">
+                        Erreicht Personen genau in der Sekunde, in der sie aktiv nach eurer Dienstleistung oder einem neuen Job suchen.
+                    </p>
+                </div>
+
+                <!-- Meta Ads Feed / Retargeting & Brand Awareness -->
+                <div class="ad-card">
+                    <div class="ad-type-title">
+                        <span>Meta Ads (Instagram & Facebook)</span>
+                        <span style="font-size:0.75rem; color:#a1a1aa;">Retargeting</span>
+                    </div>
+
+                    <div class="meta-box">
+                        <div class="meta-header-row">
+                            <div class="meta-avatar">K</div>
+                            <div>
+                                <div class="meta-brand-name">[Kundenname GmbH]</div>
+                                <div class="meta-subtext">Gesponsert • 🌐</div>
+                            </div>
+                        </div>
+                        <div class="meta-caption">
+                            🚀 Schlechtes Arbeitsklima oder unzuverlässige Dienstleister? Wir machen es anders: Erlebe geprüfte Qualität und ein Team, das zusammenhält.
+                        </div>
+                        <div class="meta-cta-bar">
+                            <span style="font-size:0.8rem; color:#a1a1aa;">ihre-domain.de/karriere</span>
+                            <span style="color:var(--gold-primary); font-weight:bold; font-size:0.8rem;">Jetzt bewerben →</span>
+                        </div>
+                    </div>
+                    <p style="margin-top: 14px; font-size: 0.85rem; color: var(--text-muted);">
+                        Retargeting aller Nutzer, die eure Reels angesehen oder die Website besucht haben.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. EIGENER PUNKT: Mitarbeitergewinnung / Recruiting (1-3 Videos) -->
+        <section class="section">
+            <div class="section-header">
+                <span class="kicker">Social Recruiting</span>
+                <h2>3. Gezielte Mitarbeitergewinnung (Recruiting-Reels)</h2>
+                <p>Authentische Einblicke, Mitarbeiter-Benefits und Hook-Formate gegen den Fachkräftemangel.</p>
+            </div>
+
+            <div class="grid-phones">
+
+                <!-- Recruiting Video 1 -->
+                <div class="phone-mockup-card">
+                    <div class="phone-screen">
+                        <span class="tag-pill" style="color:#10b981; border-color: rgba(16,185,129,0.4);">💼 Team-Kultur</span>
+                        <!-- ECHTE VIDEO-DATEI RECRUITING 1 -->
+                        <video controls playsinline poster="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80">
+                            <source src="DEIN_RECRUITING_VIDEO_1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="card-meta">
+                        <h3 class="serif-font">„Ein Tag als [Beruf] bei uns“</h3>
+                        <p>Authentischer Blick hinter die Kulissen, Team-Vibe und moderne Arbeitsplätze – baut Vorurteile ab.</p>
+                    </div>
+                </div>
+
+                <!-- Recruiting Video 2 -->
+                <div class="phone-mockup-card">
+                    <div class="phone-screen">
+                        <span class="tag-pill" style="color:#10b981; border-color: rgba(16,185,129,0.4);">⚡ Benefits & Gehalt</span>
+                        <!-- ECHTE VIDEO-DATEI RECRUITING 2 -->
+                        <video controls playsinline poster="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80">
+                            <source src="DEIN_RECRUITING_VIDEO_2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="card-meta">
+                        <h3 class="serif-font">3 Gründe für den Wechsel</h3>
+                        <p>Klare Ansprache der Benefits: 4-Tage-Woche, Überstundenausgleich, Weiterbildungen & Firmenfahrzeug.</p>
+                    </div>
+                </div>
+
+                <!-- Recruiting Video 3 -->
+                <div class="phone-mockup-card">
+                    <div class="phone-screen">
+                        <span class="tag-pill" style="color:#10b981; border-color: rgba(16,185,129,0.4);">🎯 Direkte Ansprache</span>
+                        <!-- ECHTE VIDEO-DATEI RECRUITING 3 -->
+                        <video controls playsinline poster="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80">
+                            <source src="DEIN_RECRUITING_VIDEO_3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="card-meta">
+                        <h3 class="serif-font">60-Sekunden Express-Bewerbung</h3>
+                        <p>Call-to-Action auf den schnellen Mobile-Bewerbungsprozess ganz ohne Lebenslauf und Anschreiben.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5. Interaktive Webseiten-Vorschau (Live-Demo Prototyp) -->
+        <section class="section">
+            <div class="section-header">
+                <span class="kicker">Webdesign & Prototyping</span>
+                <h2>4. Live Webseiten-Vorschau für den Kunden</h2>
+                <p>Testet den neuen High-Speed Webauftritt direkt im Desktop- oder Mobile-Rahmen.</p>
+            </div>
+
+            <div class="web-preview-container">
+                <div class="browser-top">
+                    <div class="browser-buttons">
+                        <span class="b-dot b-red"></span>
+                        <span class="b-dot b-yellow"></span>
+                        <span class="b-dot b-green"></span>
+                    </div>
+
+                    <!-- Umschalter Desktop / Smartphone -->
+                    <div class="view-switchers">
+                        <button class="view-btn active" id="btnDesktop" onclick="setMode('desktop')">🖥 Desktop</button>
+                        <button class="view-btn" id="btnMobile" onclick="setMode('mobile')">📱 Smartphone</button>
+                    </div>
+
+                    <a href="https://example.com" target="_blank" style="color: var(--gold-primary); font-size: 0.8rem; text-decoration: none; font-weight: 600;">In neuem Tab öffnen ↗</a>
+                </div>
+
+                <div class="iframe-stage">
+                    <!-- Ersetze 'https://example.com' mit deiner Live-Demo URL -->
+                    <iframe src="https://example.com" class="preview-frame" id="previewIframe"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Abschluss & Call-to-Action -->
+        <section class="cta-box" id="termin">
+            <span class="kicker">Nächster Schritt</span>
+            <h2 class="serif-font">Bereit, eure Sichtbarkeit planbar zu skalieren?</h2>
+            <p>
+                Lasst uns in einem kurzen 20-minütigen Kickoff-Call eure genaue Roadmap besprechen und die Formate final abstimmen.
+            </p>
+            <!-- Ersetze den Link mit deinem Calendly-Link -->
+            <a href="https://calendly.com" target="_blank" class="btn-gold">📅 Jetzt Kickoff-Termin wählen</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 STEINHAUER MEDIA • Social Media & Performance Marketing</p>
+        </div>
+    </footer>
+
+    <!-- Interaktive Skripte für Slideshow & Geräte-Umschalter -->
+    <script>
+        // 1. Slideshow / Karussell Steuerung
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlide(index) {
+            if (index >= slides.length) currentSlide = 0;
+            else if (index < 0) currentSlide = slides.length - 1;
+            else currentSlide = index;
+
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        function goToSlide(index) {
+            showSlide(index);
+        }
+
+        // 2. Webseiten-Vorschau Umschalter (Desktop / Mobile)
+        const iframe = document.getElementById('previewIframe');
+        const btnDesktop = document.getElementById('btnDesktop');
+        const btnMobile = document.getElementById('btnMobile');
+
+        function setMode(mode) {
+            if (mode === 'mobile') {
+                iframe.classList.add('mobile-mode');
+                btnMobile.classList.add('active');
+                btnDesktop.classList.remove('active');
+            } else {
+                iframe.classList.remove('mobile-mode');
+                btnDesktop.classList.add('active');
+                btnMobile.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>
