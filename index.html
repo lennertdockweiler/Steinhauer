@@ -886,13 +886,13 @@
 
             <div class="grid-phones">
 
-                <!-- Spalte 1: Humor & Hook Format -->
+                <!-- Spalte 1: Humor & Hook Format mit vid1.png Thumbnail -->
                 <div class="phone-mockup-card">
                     <div class="phone-screen">
                         <span class="tag-pill">🔥 Virale Reichweite</span>
-                        <video controls playsinline
-                            poster="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80">
-                            <source src="COMEDY.mov" type="video/mp4">
+                        <video controls playsinline preload="metadata" poster="./vid1.png">
+                            <source src="./COMEDY.mov" type="video/mp4">
+                            <source src="./COMEDY.mov" type="video/quicktime">
                         </video>
                     </div>
                     <div class="card-meta">
@@ -905,13 +905,13 @@
                     </div>
                 </div>
 
-                <!-- Spalte 2: Experten- & Education-Format -->
+                <!-- Spalte 2: Experten- & Education-Format mit vid2.png Thumbnail -->
                 <div class="phone-mockup-card">
                     <div class="phone-screen">
                         <span class="tag-pill" style="color:#60a5fa; border-color: rgba(96,165,250,0.4);">🎓 Experten-Wissen</span>
-                        <video controls playsinline
-                            poster="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80">
-                            <source src="EDUCATION.mov" type="video/mp4">
+                        <video controls playsinline preload="metadata" poster="./vid2.png">
+                            <source src="./EDUCATION.mov" type="video/mp4">
+                            <source src="./EDUCATION.mov" type="video/quicktime">
                         </video>
                     </div>
                     <div class="card-meta">
@@ -924,17 +924,17 @@
                     </div>
                 </div>
 
-                <!-- Spalte 3: Bild-Karussell / Infografik-Format -->
+                <!-- Spalte 3: Bild-Karussell / Infografik-Format mit vid3.png Startbild -->
                 <div class="phone-mockup-card">
                     <div class="phone-screen" style="background: #090b0d;">
                         <span class="tag-pill" style="color: var(--gold-primary); border-color: rgba(226, 192, 141, 0.4); background: rgba(9, 11, 13, 0.95);">
                             📸 Infografik-Serie
                         </span>
 
-                        <!-- Interaktive 5-Bilder Slideshow -->
+                        <!-- Interaktive Slideshow mit vid3.png als Cover -->
                         <div class="carousel-container" id="educationalCarousel">
                             <div class="carousel-slide active">
-                                <img src="./1.png" alt="Cover: 5 Fehler beim Zähneputzen" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/lennertdockweiler/Steinhauer/main/1.png';">
+                                <img src="./vid3.png" alt="Karussell Cover Thumbnail" onerror="this.onerror=null; this.src='./1.png';">
                             </div>
                             <div class="carousel-slide">
                                 <img src="./2.png" alt="Fehler 1: Zu viel Druck" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/lennertdockweiler/Steinhauer/main/2.png';">
@@ -1224,7 +1224,7 @@
         </div>
     </footer>
 
-    <!-- Interaktive Skripte: Scroll-Progress, Slideshow, Graphen & Geräte-Umschalter -->
+    <!-- Interaktive Skripte für Slideshow, Graphen & Geräte-Umschalter -->
     <script>
         // 0. Scroll Progress Bar (Champagner-Gold Timeline oben)
         window.addEventListener('scroll', () => {
