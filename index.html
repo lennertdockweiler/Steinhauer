@@ -48,6 +48,25 @@
             overflow-x: hidden;
         }
 
+        /* Champagner-Gold Scroll-Progress Bar */
+        .scroll-progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.05);
+            z-index: 9999;
+        }
+
+        .scroll-progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--gold-dark) 0%, var(--gold-primary) 50%, var(--gold-light) 100%);
+            box-shadow: 0 0 10px rgba(226, 192, 141, 0.6);
+            transition: width 0.08s ease-out;
+        }
+
         h1,
         h2,
         h3,
@@ -811,6 +830,11 @@
 
 <body>
 
+    <!-- Champagner-Gold Scroll Progress Indicator (Timeline oben) -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+    </div>
+
     <!-- Top Sticky Bar mit Logo -->
     <nav class="navbar">
         <div class="container nav-content">
@@ -1200,8 +1224,16 @@
         </div>
     </footer>
 
-    <!-- Interaktive Skripte für Slideshow, Graphen & Geräte-Umschalter -->
+    <!-- Interaktive Skripte: Scroll-Progress, Slideshow, Graphen & Geräte-Umschalter -->
     <script>
+        // 0. Scroll Progress Bar (Champagner-Gold Timeline oben)
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('scrollProgressBar').style.width = scrolled + '%';
+        });
+
         // 1. Slideshow / Karussell Steuerung (5 Slides)
         let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel-slide');
