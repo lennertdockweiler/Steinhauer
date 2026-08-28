@@ -226,6 +226,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 28px;
+            align-items: stretch;
         }
 
         .phone-mockup-card {
@@ -235,7 +236,9 @@
             padding: 20px;
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
             transition: border-color 0.2s ease;
+            height: 100%;
         }
 
         .phone-mockup-card:hover {
@@ -275,14 +278,46 @@
             z-index: 10;
         }
 
+        .card-meta {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
         .card-meta h3 {
-            font-size: 1.2rem;
-            margin-bottom: 8px;
+            font-size: 1.25rem;
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        .card-subline {
+            color: var(--gold-primary);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
         }
 
         .card-meta p {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .card-benefit {
+            margin-top: auto;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 0.78rem;
+            color: var(--text-subtle);
+            line-height: 1.4;
+        }
+
+        .card-benefit strong {
+            color: #d4d4d8;
         }
 
         /* Carousel / Slideshow Section */
@@ -389,7 +424,7 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 16px;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 16px;
         }
@@ -419,6 +454,17 @@
             background: var(--gold-primary);
             color: #090b0d;
             font-weight: 800;
+        }
+
+        .case-study-badge {
+            background: rgba(226, 192, 141, 0.08);
+            border-left: 3px solid var(--gold-primary);
+            padding: 10px 14px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin-bottom: 20px;
+            font-size: 0.82rem;
+            color: #d4d4d8;
+            line-height: 1.45;
         }
 
         .stats-grid {
@@ -786,8 +832,8 @@
                 <span class="kicker">Individuelle Wachstums-Roadmap</span>
                 <h1>Digitale Sichtbarkeit, die planbar Neukunden & Mitarbeiter bringt.</h1>
                 <p>
-                    Hier findet ihr eure maßgeschneiderte Strategie: Organische 9:16 Videoformate, gezielte
-                    Performance-Werbung und ein blitzschneller Webauftritt – sofort interaktiv zum Testen.
+                    Hier findet ihr eure maßgeschneiderte Strategie: Organische 9:16 Videoformate, gezieltes
+                    Google Ads & Meta Ads Performance-Marketing und ein blitzschneller Webauftritt – sofort interaktiv zum Testen.
                 </p>
                 <a href="#kontakt" class="btn-gold">Jetzt unverbindlich Kontakt aufnehmen →</a>
             </div>
@@ -811,15 +857,15 @@
             <div class="section-header">
                 <span class="kicker">Organische Social Media Formate</span>
                 <h2>1. Content-Showcase (Instagram & TikTok)</h2>
-                <p>Echte Prototypen für organische Reichweite, Fachkompetenz und edukatives Vertrauen.</p>
+                <p>Drei aufeinander abgestimmte Säulen für maximale Reichweite, Vertrauensaufbau und nachhaltige Kundenbindung.</p>
             </div>
 
             <div class="grid-phones">
 
-                <!-- Video 1: Comedy & Hook Format -->
+                <!-- Spalte 1: Humor & Hook Format -->
                 <div class="phone-mockup-card">
                     <div class="phone-screen">
-                        <span class="tag-pill">🔥 Comedy & Reichweite</span>
+                        <span class="tag-pill">🔥 Virale Reichweite</span>
                         <video controls playsinline
                             poster="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80">
                             <source src="COMEDY.mov" type="video/mp4">
@@ -827,33 +873,38 @@
                     </div>
                     <div class="card-meta">
                         <h3 class="serif-font">Humorvolle Alltags-Hooks</h3>
-                        <p>Schnelle Einstiege & humorvolle Sketches, die Nutzer in den ersten 2 Sekunden fesseln und
-                            hohe organische Reichweiten im Algorithmus erzielen.</p>
+                        <span class="card-subline">Kurzvideo / Reel (9:16)</span>
+                        <p>Unterhaltsame Sketche und Alltagssituationen, die Nutzer in den ersten 2 Sekunden packen und hohe virale Reichweiten im Algorithmus erzielen.</p>
+                        <div class="card-benefit">
+                            🎯 <strong>Ziel:</strong> Maximale Sichtbarkeit und Sympathie bei Neukunden.
+                        </div>
                     </div>
                 </div>
 
-                <!-- Video 2: Educational / Fachwissen -->
+                <!-- Spalte 2: Experten- & Education-Format -->
                 <div class="phone-mockup-card">
                     <div class="phone-screen">
-                        <span class="tag-pill" style="color:#60a5fa; border-color: rgba(96,165,250,0.4);">🎓 Fachwissen
-                            & Vertrauen</span>
+                        <span class="tag-pill" style="color:#60a5fa; border-color: rgba(96,165,250,0.4);">🎓 Experten-Wissen</span>
                         <video controls playsinline
                             poster="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80">
                             <source src="EDUCATION.mov" type="video/mp4">
                         </video>
                     </div>
                     <div class="card-meta">
-                        <h3 class="serif-font">Experten- & Education-Reels</h3>
-                        <p>Talking-Head Formate mit professionellen Untertiteln: z. B. Bootsbau-Präzision oder
-                            Angstpatienten-Aufklärung für spürbar mehr Kundenvertrauen.</p>
+                        <h3 class="serif-font">Fachkompetenz & Aufklärung</h3>
+                        <span class="card-subline">Talking-Head Reel (9:16)</span>
+                        <p>Lehrreiche Kurzvideos mit animierten Untertiteln: Komplexe Behandlungen verständlich erklärt, um Vorurteile und Behandlungsängste abzubauen.</p>
+                        <div class="card-benefit">
+                            🛡️ <strong>Ziel:</strong> Starker Expertenstatus und sofortiger Vertrauensaufbau.
+                        </div>
                     </div>
                 </div>
 
-                <!-- Slideshow / Karussell: Beispiel Infografik & Carousel -->
+                <!-- Spalte 3: Bild-Karussell / Infografik-Format -->
                 <div class="phone-mockup-card">
                     <div class="phone-screen" style="background: #090b0d;">
                         <span class="tag-pill" style="color: var(--gold-primary); border-color: rgba(226, 192, 141, 0.4); background: rgba(9, 11, 13, 0.95);">
-                            📸 Wissens-Karussell
+                            📸 Infografik-Serie
                         </span>
 
                         <!-- Interaktive 5-Bilder Slideshow -->
@@ -888,30 +939,26 @@
                         </div>
                     </div>
 
-                    <!-- Erklärung für den Kunden: Warum Karussell-Beiträge? -->
+                    <!-- Einheitliche Beschreibung für Karussell-Beiträge -->
                     <div class="card-meta">
-                        <h3 class="serif-font">Informativ-Beitrag (Karussell)</h3>
-                        <p style="color: var(--gold-primary); font-size: 0.85rem; font-weight: 700; margin-bottom: 4px;">
-                            Beispiel-Thema: 5 Fehler beim Zähneputzen
-                        </p>
-                        <p style="color: #cbd5e1; font-size: 0.82rem; line-height: 1.45; margin-bottom: 8px;">
-                            <strong>Wissen visuell vermitteln:</strong> Zu jedem beliebigen Thema erstellen wir mehrteilige Bild-Karussells. Nutzer wischen durch mehrere Folien, lernen konkrete Tipps und speichern den Beitrag ab.
-                        </p>
-                        <p style="color: #a1a1aa; font-size: 0.78rem; line-height: 1.4;">
-                            💡 <em>Vorteil:</em> Karussells erzielen auf Instagram die höchste Interaktions- und Speicher-Rate, bauen nachweislich Expertenstatus auf und binden die Zielgruppe nachhaltig an dein Unternehmen.
-                        </p>
+                        <h3 class="serif-font">Informative Karussell-Posts</h3>
+                        <span class="card-subline">Mehrteilige Bilder-Slideshow</span>
+                        <p>Strukturierte Wissensbeiträge zum Durchwischen (hier am Beispiel <em>„5 Fehler beim Zähneputzen“</em>). Perfekt, um jedes Fachthema visuell greifbar zu machen.</p>
+                        <div class="card-benefit">
+                            📌 <strong>Ziel:</strong> Höchste Speicher- & Teilen-Rate für nachhaltige Markenbindung.
+                        </div>
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- 3. Performance Marketing: Google Ads Management & Meta Ads -->
+        <!-- 3. Performance Marketing: Google Ads & Meta Ads (Werbung & Management) -->
         <section class="section">
             <div class="section-header">
-                <span class="kicker">Performance Marketing & Google Ads Management</span>
-                <h2>2. Bezahlte Kampagnen: Google Ads & Social Ads</h2>
-                <p>Mit unserem professionellen Google Ads Management erreichen wir kaufbereite Neukunden und qualifizierte Fachkräfte genau dann, wenn sie aktiv nach deinen Leistungen oder offenen Stellen suchen – messbar, planbar und maximal kosteneffektiv.</p>
+                <span class="kicker">Performance Marketing (Google Ads & Meta Ads)</span>
+                <h2>2. Bezahlte Werbung: Google Ads & Meta Ads Management</h2>
+                <p>Mit ganzheitlichem <strong>Google Ads & Meta Ads Management</strong> erreichen wir kaufbereite Neukunden und qualifizierte Fachkräfte über die wichtigsten digitalen Werbekanäle – hochgradig zielgerichtet, planbar und maximal kosteneffektiv.</p>
             </div>
 
             <!-- Interaktives Performance Dashboard -->
@@ -919,10 +966,9 @@
                 <div class="dashboard-header">
                     <div>
                         <span
-                            style="font-size: 0.8rem; color: var(--gold-primary); font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Google
-                            Ads Kampagnen-Performance</span>
+                            style="font-size: 0.8rem; color: var(--gold-primary); font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Echte Kampagnen-Performance & Analytics</span>
                         <h3 class="serif-font" style="font-size: 1.35rem; margin-top: 2px;" id="dashMainTitle">
-                            Neukundengewinnung (High-Intent Search)</h3>
+                            Neukundengewinnung (High-Intent Search & Social Ads)</h3>
                     </div>
 
                     <!-- Toggle zwischen Neukunden & Mitarbeiter-Kampagne -->
@@ -932,6 +978,11 @@
                         <button class="dash-tab-btn" id="tabRecruiting" onclick="switchCampaignData('recruiting')">💼
                             Mitarbeiter-Kampagne</button>
                     </div>
+                </div>
+
+                <!-- Dynamischer Kunden-Hinweis / Case Study Note -->
+                <div class="case-study-badge" id="caseStudyNotice">
+                    📍 <strong>Echtes Kundenbeispiel (Regensburg):</strong> Diese Daten stammen aus einer aktiven Kampagne für eine Kundin im Bereich dauerhafte Laser-Haarentfernung. Durch die Kombination aus Google Search Ads (Suchabsicht) und Meta Ads (Retargeting) konnten 142 qualifizierte Neukundenanfragen bei einem Durchschnitts-CPA von nur 17,60 € erzielt werden.
                 </div>
 
                 <!-- KPI Zahlen-Karten -->
@@ -994,15 +1045,15 @@
                         </div>
                     </div>
                     <p style="margin-top: 14px; font-size: 0.85rem; color: var(--text-muted);">
-                        <strong>Kosteneffektive Reichweite:</strong> Durch kontinuierliche A/B-Tests, Keyword-Optimierung und Conversion-Tracking minimieren wir deinen Klickpreis (CPC) und maximieren qualifizierte Kunden- sowie Bewerberanfragen.
+                        <strong>Google Ads Werbung:</strong> Erreicht potenzielle Kunden und Bewerber genau in der Sekunde, in der sie aktiv nach einer Lösung suchen. Wir optimieren Keywords und Gebote für minimale Kosten pro Klick.
                     </p>
                 </div>
 
                 <!-- Meta Ads Feed / Retargeting & Brand Awareness -->
                 <div class="ad-card">
                     <div class="ad-type-title">
-                        <span>Meta Ads (Instagram & Facebook)</span>
-                        <span style="font-size:0.75rem; color:#a1a1aa;">Retargeting</span>
+                        <span>Meta Ads (Instagram & Facebook Marketing)</span>
+                        <span style="font-size:0.75rem; color:#a1a1aa;">Social Ads & Retargeting</span>
                     </div>
 
                     <div class="meta-box">
@@ -1024,7 +1075,7 @@
                         </div>
                     </div>
                     <p style="margin-top: 14px; font-size: 0.85rem; color: var(--text-muted);">
-                        Retargeting aller Nutzer, die eure Reels angesehen oder die Website besucht haben.
+                        <strong>Meta Ads Werbung:</strong> Präzises Social-Media-Targeting und Retargeting. Wir sprechen Nutzer auf Instagram & Facebook mit Video-Creatives an, die bereits Interesse an deinen Leistungen gezeigt haben.
                     </p>
                 </div>
 
@@ -1034,7 +1085,7 @@
         <!-- 4. EIGENER PUNKT: Mitarbeitergewinnung / Recruiting (1-3 Videos) -->
         <section class="section">
             <div class="section-header">
-                <span class="kicker">Social Recruiting</span>
+                <span class="kicker">Social Recruiting (Meta & Google Ads)</span>
                 <h2>3. Gezielte Mitarbeitergewinnung (Recruiting-Reels)</h2>
                 <p>Authentische Einblicke, Mitarbeiter-Benefits und Hook-Formate gegen den Fachkräftemangel.</p>
             </div>
@@ -1202,7 +1253,8 @@
 
         const campaignData = {
             leads: {
-                title: "Neukundengewinnung (High-Intent Search)",
+                title: "Neukundengewinnung (High-Intent Search & Social Ads)",
+                notice: "📍 <strong>Echtes Kundenbeispiel (Regensburg):</strong> Diese Daten stammen aus einer aktiven Kampagne für eine Kundin im Bereich dauerhafte Laser-Haarentfernung. Durch die Kombination aus Google Search Ads (Suchabsicht) und Meta Ads (Retargeting) konnten 142 qualifizierte Neukundenanfragen bei einem Durchschnitts-CPA von nur 17,60 € erzielt werden.",
                 kpi1Label: "Generierte Anfragen",
                 kpi1Val: "142",
                 kpi2Val: "1,48 €",
@@ -1214,6 +1266,7 @@
             },
             recruiting: {
                 title: "Mitarbeitergewinnung (Social Recruiting Ads)",
+                notice: "📍 <strong>Echtes Kundenbeispiel (Recruiting):</strong> Für eine echte Kundin konnten wir über zielgerichtete Social-Recruiting-Ads auf Instagram und Facebook 38 qualifizierte Bewerbungen in 8 Wochen generieren – zu durchschnittlich 24,50 € pro Bewerber.",
                 kpi1Label: "Bewerbungseingänge",
                 kpi1Val: "38",
                 kpi2Val: "0,92 €",
@@ -1298,6 +1351,7 @@
         function switchCampaignData(type) {
             const data = campaignData[type];
             document.getElementById('dashMainTitle').innerText = data.title;
+            document.getElementById('caseStudyNotice').innerHTML = data.notice;
             document.getElementById('kpiLabel1').innerText = data.kpi1Label;
             document.getElementById('kpiVal1').innerText = data.kpi1Val;
             document.getElementById('kpiVal2').innerText = data.kpi2Val;
