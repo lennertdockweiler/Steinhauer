@@ -777,6 +777,7 @@
 
         /* Final Call To Action - Contact Card */
         .cta-box {
+            position: relative;
             background: linear-gradient(180deg, #111418 0%, #161a20 100%);
             border: 1px solid var(--gold-primary);
             border-radius: var(--radius-lg);
@@ -784,6 +785,21 @@
             text-align: center;
             margin: 60px 0;
             box-shadow: 0 15px 40px rgba(226, 192, 141, 0.1);
+            animation: ctaGlowPulse 3.2s ease-in-out infinite;
+        }
+
+        @keyframes ctaGlowPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 15px 40px rgba(226, 192, 141, 0.12), 0 0 18px rgba(226, 192, 141, 0.18);
+                border-color: var(--gold-dark);
+            }
+
+            50% {
+                box-shadow: 0 15px 55px rgba(226, 192, 141, 0.3), 0 0 45px rgba(226, 192, 141, 0.4);
+                border-color: var(--gold-light);
+            }
         }
 
         .cta-box h2 {
@@ -803,6 +819,49 @@
             align-items: center;
             gap: 18px;
             flex-wrap: wrap;
+        }
+
+        /* Glühender "E-Mail schreiben"-Button im Kontaktbereich mit Licht-Sweep */
+        .cta-box .btn-gold {
+            position: relative;
+            overflow: hidden;
+            animation: ctaBtnGlow 3.2s ease-in-out infinite;
+        }
+
+        .cta-box .btn-gold::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 130%;
+            width: 55%;
+            height: 100%;
+            background: linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.85) 50%, transparent 100%);
+            transform: skewX(-20deg);
+            animation: ctaBtnShine 3.2s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes ctaBtnGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 4px 20px rgba(226, 192, 141, 0.25), 0 0 12px rgba(226, 192, 141, 0.2);
+            }
+
+            50% {
+                box-shadow: 0 4px 28px rgba(226, 192, 141, 0.45), 0 0 32px rgba(226, 192, 141, 0.55);
+            }
+        }
+
+        @keyframes ctaBtnShine {
+            0% {
+                left: 130%;
+            }
+
+            35%,
+            100% {
+                left: -70%;
+            }
         }
 
         /* Footer */
@@ -967,6 +1026,10 @@
     </header>
 
     <main class="container">
+        <div class="section-connector">
+            <div class="connector-line"></div>
+            <div class="connector-arrow"></div>
+        </div>
 
         <!-- 2. Organischer Video-Content (9:16) & Bild-Slideshow -->
         <section class="section">
