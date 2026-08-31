@@ -814,6 +814,19 @@
             color: var(--text-subtle);
         }
 
+        @media (max-width: 640px) {
+            .nav-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .client-badge {
+                font-size: 0.72rem;
+                padding: 4px 12px;
+            }
+        }
+
         @media (max-width: 900px) {
 
             .hero-grid,
@@ -844,8 +857,7 @@
                     alt="Steinhauer Media Logo" class="logo-img">
                 <span class="logo-text serif-font">STEINHAUER MEDIA</span>
             </div>
-            <div class="client-badge">Wie wir deinem Betrieb helfen können?
-            </div>
+            <div class="client-badge">Für deinen Betrieb</div>
         </div>
     </nav>
 
