@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Dancing+Script:wght@600;700&display=swap"
         rel="stylesheet">
 
     <!-- Chart.js CDN for Interactive Performance Graph -->
@@ -952,6 +952,61 @@
             }
         }
 
+        /* Gruender-Vorstellung unterhalb des Kontaktbereichs */
+        .founders-section {
+            text-align: center;
+            padding: 20px 0 10px;
+        }
+
+        .founders-photo-wrap {
+            max-width: 420px;
+            margin: 0 auto 24px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+        }
+
+        .founders-photo {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .founders-names {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            letter-spacing: 0.3px;
+            margin-bottom: 6px;
+        }
+
+        .founders-signature {
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
+            font-size: 2.1rem;
+            line-height: 1.3;
+            color: var(--gold-primary);
+            text-shadow: 0 0 12px rgba(226, 192, 141, 0.35);
+            margin-bottom: 10px;
+        }
+
+        .founders-note {
+            font-size: 0.95rem;
+            color: var(--text-subtle);
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 640px) {
+            .founders-photo-wrap {
+                max-width: 300px;
+            }
+
+            .founders-signature {
+                font-size: 1.7rem;
+            }
+        }
+
         @media (max-width: 640px) {
             .nav-content {
                 flex-direction: column;
@@ -1408,6 +1463,17 @@
                 <a href="mailto:info@steinhauermedia.de" class="btn-gold">✉️ E-Mail schreiben</a>
                 <a href="tel:+491234567890" class="btn-outline">📞 Jetzt anrufen</a>
             </div>
+        </section>
+
+        <!-- 7. Gruender-Vorstellung -->
+        <section class="founders-section">
+            <div class="founders-photo-wrap">
+                <img src="./images/founders-shawn-lennert.jpg"
+                    alt="Gruender Shawn Keel und Lennert Dockweiler" class="founders-photo">
+            </div>
+            <p class="founders-names">Gründer Shawn Keel und Lennert Dockweiler</p>
+            <p class="founders-signature">Shawn Keel &amp; Lennert Dockweiler</p>
+            <p class="founders-note">Wir freuen uns, dir beim nächsten Schritt zu helfen.</p>
         </section>
 
     </main>
