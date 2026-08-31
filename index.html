@@ -814,6 +814,85 @@
             color: var(--text-subtle);
         }
 
+        /* Fliessender Gold-Connector zwischen den Abschnitten (leitet zum Kontakt) */
+        .section-connector {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 64px;
+            position: relative;
+        }
+
+        .connector-line {
+            position: relative;
+            width: 3px;
+            height: 100%;
+            border-radius: 3px;
+            overflow: hidden;
+            background: linear-gradient(180deg,
+                    transparent 0%,
+                    var(--gold-dark) 20%,
+                    var(--gold-primary) 50%,
+                    var(--gold-light) 80%,
+                    transparent 100%);
+            box-shadow: 0 0 8px rgba(226, 192, 141, 0.25);
+        }
+
+        .connector-line::after {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg,
+                    transparent 0%,
+                    rgba(255, 255, 255, 0.95) 50%,
+                    transparent 100%);
+            animation: connectorFlow 2.4s linear infinite;
+        }
+
+        .connector-arrow {
+            position: absolute;
+            bottom: 4px;
+            width: 12px;
+            height: 12px;
+            border-right: 2px solid var(--gold-primary);
+            border-bottom: 2px solid var(--gold-primary);
+            transform: rotate(45deg);
+            filter: drop-shadow(0 0 4px rgba(226, 192, 141, 0.7));
+            animation: connectorArrowPulse 1.8s ease-in-out infinite;
+        }
+
+        @keyframes connectorFlow {
+            0% {
+                top: -100%;
+            }
+
+            100% {
+                top: 100%;
+            }
+        }
+
+        @keyframes connectorArrowPulse {
+            0%,
+            100% {
+                opacity: 0.3;
+                bottom: 4px;
+            }
+
+            50% {
+                opacity: 1;
+                bottom: -4px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .section-connector {
+                height: 44px;
+            }
+        }
+
         @media (max-width: 640px) {
             .nav-content {
                 flex-direction: column;
@@ -1000,6 +1079,10 @@
 
             </div>
         </section>
+        <div class="section-connector">
+            <div class="connector-line"></div>
+            <div class="connector-arrow"></div>
+        </div>
 
         <!-- 3. Performance Marketing: Google Ads & Meta Ads (Werbung & Management) -->
         <section class="section">
@@ -1139,6 +1222,10 @@
 
             </div>
         </section>
+        <div class="section-connector">
+            <div class="connector-line"></div>
+            <div class="connector-arrow"></div>
+        </div>
 
         <!-- 4. EIGENER PUNKT: Mitarbeitergewinnung / Recruiting (1-3 Videos) -->
         <section class="section">
@@ -1203,6 +1290,10 @@
 
             </div>
         </section>
+        <div class="section-connector">
+            <div class="connector-line"></div>
+            <div class="connector-arrow"></div>
+        </div>
 
         <!-- 5. Interaktive Webseiten-Vorschau (Live-Demo Prototyp) -->
         <section class="section">
@@ -1237,6 +1328,10 @@
                 </div>
             </div>
         </section>
+        <div class="section-connector">
+            <div class="connector-line"></div>
+            <div class="connector-arrow"></div>
+        </div>
 
         <!-- 6. Abschluss & Direkter Kontakt (E-Mail & Telefon) -->
         <section class="cta-box" id="kontakt">
@@ -1293,6 +1388,39 @@
 
         function goToSlide(index) {
             showSlide(index);
+        }
+
+        // 1b. Touch-Swipe Steuerung fuer das Karussell (mobile-freundlich)
+        const carouselEl = document.getElementById('educationalCarousel');
+        if (carouselEl) {
+            let touchStartX = 0;
+            let touchStartY = 0;
+            let touchEndX = 0;
+            let touchEndY = 0;
+            const swipeThreshold = 40;
+
+            carouselEl.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                touchStartY = e.changedTouches[0].screenY;
+            }, { passive: true });
+
+            carouselEl.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                touchEndY = e.changedTouches[0].screenY;
+
+                const deltaX = touchEndX - touchStartX;
+                const deltaY = touchEndY - touchStartY;
+
+                // Nur reagieren, wenn die Wischbewegung eher horizontal als vertikal ist
+                // (damit normales Scrollen der Seite nicht blockiert wird)
+                if (Math.abs(deltaX) > swipeThreshold && Math.abs(deltaX) > Math.abs(deltaY)) {
+                    if (deltaX < 0) {
+                        changeSlide(1); // Nach links gewischt -> naechstes Bild
+                    } else {
+                        changeSlide(-1); // Nach rechts gewischt -> vorheriges Bild
+                    }
+                }
+            }, { passive: true });
         }
 
         // 2. Webseiten-Vorschau Umschalter (Desktop / Mobile)
